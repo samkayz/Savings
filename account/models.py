@@ -39,9 +39,40 @@ class SavingsMember(models.Model):
     group_id = models.IntegerField()
     member_id = models.IntegerField()
     member_name = models.CharField(max_length=255)
+    saving_bal = models.FloatField()
 
     class Meta:
         db_table = "savings_member"
+
+
+class GroupFinancial(models.Model):
+    group_id = models.IntegerField()
+    group_bal = models.FloatField()
+
+    class Meta:
+        db_table = "group_financial"
+
+
+class GroupActivity(models.Model):
+    group_id = models.IntegerField()
+    member_id = models.IntegerField()
+    member_name = models.CharField(max_length=255)
+    amount = models.FloatField()
+    ref_no = models.CharField(max_length=255)
+
+    class Meta:
+        db_table = "group_activity"
+
+
+class GeneralActivity(models.Model):
+    member_id = models.IntegerField()
+    amount = models.FloatField()
+    ref_no = models.CharField(max_length=255)
+    Desc = models.CharField(max_length=255)
+
+    class Meta:
+        db_table = "general_activity"
+
 
 
 

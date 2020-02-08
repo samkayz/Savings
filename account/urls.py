@@ -7,5 +7,7 @@ urlpatterns = [
     path('', include('djoser.urls.authtoken')),
     path('restricted', views.restricted),
     path('send_money', views.send_money),
-    path('create_group', views.create_group)
+    path('create_group', views.create_group),
+    path('join_group', views.join_group),
+    path('pay', views.pay),
 ]

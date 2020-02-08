@@ -24,4 +24,22 @@ class SavingsGroupSerializers(serializers.ModelSerializer):
 class SavingsMemberSerializers(serializers.ModelSerializer):
     class Meta:
         model = SavingsMember
-        fields = ('id', 'group_id', 'member_id', 'member_name')
+        fields = ('id', 'group_id', 'member_id', 'member_name', 'saving_bal')
+
+
+class GroupFinancialSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = GroupFinancial
+        fields = ('id', 'group_id', 'group_bal')
+
+
+class GeneralActivitySerializers(serializers.ModelSerializer):
+    class Meta:
+        model = GeneralActivity
+        fields = ('id', 'member_id', 'amount', 'ref_no', 'Desc')
+
+
+class GroupActivitySerializers(serializers.ModelSerializer):
+    class Meta:
+        model = GroupActivity
+        fields = ('id', 'group_id', 'member_id', 'member_name', 'amount', 'ref_no')
